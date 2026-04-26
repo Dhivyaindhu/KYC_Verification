@@ -55,6 +55,8 @@ TEMPLATES = [
     },
 ]
 
+WSGI_APPLICATION = 'config.wsgi.application'
+
 # Use PostgreSQL on Render, SQLite locally
 DATABASES = {
     'default': dj_database_url.config(
@@ -83,12 +85,12 @@ CORS_ALLOW_CREDENTIALS = True
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-FILE_UPLOAD_MAX_MEMORY_SIZE = 5 * 1024 * 1024   # 5 MB
-DATA_UPLOAD_MAX_MEMORY_SIZE = 5 * 1024 * 1024   # 5 MB
+FILE_UPLOAD_MAX_MEMORY_SIZE = 5 * 1024 * 1024
+DATA_UPLOAD_MAX_MEMORY_SIZE = 5 * 1024 * 1024
 
 ALLOWED_DOCUMENT_TYPES = ['application/pdf', 'image/jpeg', 'image/png']
 ALLOWED_DOCUMENT_EXTENSIONS = ['.pdf', '.jpg', '.jpeg', '.png']
-MAX_DOCUMENT_SIZE = 5 * 1024 * 1024  # 5 MB
+MAX_DOCUMENT_SIZE = 5 * 1024 * 1024
 
 # SLA Settings (hours)
 KYC_SLA_HOURS = 24
